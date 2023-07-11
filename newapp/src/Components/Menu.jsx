@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 export default function Menu({ allData }) {
 
-    console.log(allData)
 
     return (
         <div className='menuDiv'>

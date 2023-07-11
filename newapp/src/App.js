@@ -7,6 +7,12 @@ import Home from './Components/Home';
 
 function App() {
 
+  const [data, setData] = useState([
+    { location: 'London', locationColor: 'red', description: 'kjash dgftew klsbc,mdsa', friends: ['Gilad', 'Nadia'] },
+    { location: 'France', locationColor: 'blue', description: 'nncidow kjdoc,mdsa', friends: ['Gilad', 'Yalin'] },
+    { location: 'Tel Aviv', locationColor: 'green', description: 'lljdhjdhdhd cmkdbc,mdsa', friends: ['Milen', 'Nadia'] }
+  ])
+
   const nav = useNavigate()
   const location = useLocation()
   const [btnsAllFlag, setAllBtnFlag] = useState(true)
@@ -16,7 +22,7 @@ function App() {
 
   const checkUser = (u, p) => {
     // debugger
-    if (u === 'svcollege' || p === 'abcde') {
+    if (u === '1' || p === '1') {
       nav('/home')
     }
     else alert('enter user and password!')
@@ -28,7 +34,9 @@ function App() {
     setAllBtnFlag: setAllBtnFlag,
     btnsLoginFlag: btnsLoginFlag,
     setLoginBtnFlag: setLoginBtnFlag,
-    checkUser: checkUser
+    checkUser: checkUser,
+    data: data,
+    setData: setData
   }
 
 
