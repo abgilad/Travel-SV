@@ -4,6 +4,7 @@ import SignIn from './Components/SignIn';
 import Menu from './Components/Menu';
 import { useEffect, useState } from 'react';
 import Home from './Components/Home';
+import AddUpdate from './Components/AddUpdate';
 
 function App() {
 
@@ -67,6 +68,7 @@ function App() {
         <Routes>
           <Route path='/' element={<SignIn allData={allData} />} />
           <Route path='/home' element={<Home allData={allData} />} />
+          <Route path='/:id' element={<AddUpdate />} />
         </Routes>
       </div>
     </div>

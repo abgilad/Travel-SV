@@ -1,17 +1,22 @@
 import React from 'react'
 
-export default function Location({ data }) {
+export default function Location({ data, nextIndex }) {
 
     const viewFriends = () => {
-        return data.friends.map((val) => {
-            return <p>{val}</p>
+        return data.friends.map((val, i) => {
+            return <p key={i}>{val}</p>
         })
     }
 
+    console.log(data)
+
     return (
         <div className='locationDiv'>
-            <div className='locationPlacePic' style={{ backgroundColor: data.locationColor }}></div>
+            <button onClick={() => { nextIndex('next') }}>{`<`}</button>
+            <div className='locationPlacePic' style={{ backgroundColor: data.locationColor }}>{data.location}</div>
+            <button onClick={() => { nextIndex('previous') }}>{`>`}</button>
             <p>{data.description}</p>
+
             {viewFriends()}
         </div>
     )
